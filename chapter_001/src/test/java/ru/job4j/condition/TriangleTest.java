@@ -1,4 +1,4 @@
-/**package ru.job4j.condition;
+package ru.job4j.condition;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -21,4 +21,3 @@ public class TriangleTest {
         assertThat(result, closeTo(expected, 0.1));
     }
 }
- */
