@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 /**
- * @author Petr Arsentev (parsentev@yandex.ru)
+ * @author salim
  * @version $Id$
  * @since 0.1
  */
