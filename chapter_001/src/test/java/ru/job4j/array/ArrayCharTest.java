@@ -18,4 +18,10 @@ public class ArrayCharTest {
         boolean result = word.startsWith("Hello", "Hi");
         assertThat(result, is(false));
     }
+    @Test
+    public void whenBike() {
+        ArrayChar word = new ArrayChar();
+        boolean result = word.startsWith("Велосипед", "Вел");
+        assertThat(result, is(true));
+    }
 }
