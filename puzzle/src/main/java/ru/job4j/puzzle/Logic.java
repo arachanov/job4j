@@ -70,7 +70,7 @@ public class Logic {
         int[][] table = this.convert();
         boolean result = true;
         boolean colcheck = false;
-       for (int row = 0; row != table.length - 1; row++) {
+        for (int row = 0; row != table.length - 1; row++) {
             for (int col = 0; col != table.length - 1; col++) {
                 if (table[row][col] != table[row][col + 1]) {
                     result = false;
@@ -79,7 +79,7 @@ public class Logic {
                 }
             }
         }
-       if (colcheck) {
+        if (colcheck) {
            result = true;
            for (int col = 0; col != table.length - 1; col++) {
                for (int row = 0; row != table.length - 1; row++) {
@@ -89,7 +89,7 @@ public class Logic {
                    }
                }
            }
-       }
+        }
         return result;
     }
 
