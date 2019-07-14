@@ -72,6 +72,8 @@ public class Logic {
         int count = 0;
         int count2 = 0;
         for (int i = 0; i != table.length; i++) {
+            count = 0;
+            count2 = 0;
             for (int j = 0; j != table.length; j++) {
                     if (table[i][j] == 1) {
                         count++;
@@ -80,9 +82,10 @@ public class Logic {
                         count2++;
                     }
             }
-        }
-        if ((count == table.length) || (count2 == table.length)) {
-            result = true;
+            if ((count == table.length) || (count2 == table.length)) {
+                result = true;
+                break;
+            }
         }
         return result;
     }
