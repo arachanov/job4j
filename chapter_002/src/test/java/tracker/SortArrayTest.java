@@ -25,9 +25,9 @@ public class SortArrayTest {
         assertThat(result, is(expect));
 
     }
-    /*
+
     @Test
-    public void testeArrays() {
+    public void testeArrays2() {
         SortArray array = new SortArray();
         int[] array1 = new int[]{5, 3, 4};
         int[] array2 = new int[]{0, 2, 1};
@@ -35,5 +35,5 @@ public class SortArrayTest {
         int[] expect = new int[]{0, 1, 2, 3, 4, 5};
         assertThat(result, is(expect));
 
-    }*/
+    }
 }
