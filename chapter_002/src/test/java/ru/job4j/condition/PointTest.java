@@ -15,7 +15,6 @@ public class PointTest {
         System.out.println(String.format("Result is %s", result));
         assertThat(result, is(10D));
     }
-
     @Test
     public void whenCheckItself() {
         Point point = new Point(0, 0);

@@ -10,7 +10,7 @@ public class Point {
      */
     private int x;
 
-    /**
+      /**
      * И это поле объекта. Оно доступно только конкретному объекту.
      */
     private int y;
