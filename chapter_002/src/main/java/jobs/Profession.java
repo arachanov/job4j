@@ -1,20 +1,30 @@
 package ru.job4j.jobs;
 
 public class Profession {
-    String[] name;
-    String[] surname;
-    String[] education;
+    String name;
+    String surname;
+    String education;
     long birthday;
 
-    public String[] getName() {
+    public Profession(String name, String surname, String education, long birthday) {
+        this.name = name;
+        this.surname = surname;
+        this.education = education;
+        this.birthday = birthday;
+    }
+
+    public Profession() {
+    }
+
+    public String getName() {
         return name;
     }
 
-    public String[] getSurname() {
+    public String getSurname() {
         return surname;
     }
 
-    public String[] getEducation() {
+    public String getEducation() {
         return education;
     }
 
