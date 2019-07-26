@@ -1,7 +1,7 @@
 package ru.job4j.jobs;
 
 public class Diagnose {
-    boolean good;
+    private boolean good;
 
     public Diagnose() {
     }
