@@ -14,7 +14,6 @@ public class Pacient {
     }
 
     public int getAge() {
-
         return age;
     }
 }

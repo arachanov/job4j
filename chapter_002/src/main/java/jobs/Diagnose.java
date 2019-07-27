@@ -8,6 +8,5 @@ public class Diagnose {
 
     public boolean isGood() {
         this.good = false;
-        return good;
-    }
+        return good; }
 }

@@ -6,6 +6,6 @@ public class Doctor extends Profession {
         if (pacient.getAge() > 50) {
             health.isGood();
       }
-        return health;
+         return health;
     }
 }
