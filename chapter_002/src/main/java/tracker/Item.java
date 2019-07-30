@@ -57,7 +57,6 @@ public class Item {
         Item item = (Item) o;
         return time == item.time && Objects.equals(id, item.id) && Objects.equals(name, item.name) && Objects.equals(decs, item.decs);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name, decs, time);

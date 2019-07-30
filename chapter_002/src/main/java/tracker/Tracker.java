@@ -9,9 +9,6 @@ public class Tracker {
     private final Item[] items = new Item[100];
     private static final Random RN = new Random();
 
-    /**
-     * Указатель ячейки для новой заявки.
-     */
     private int position = 0;
 
     /**
