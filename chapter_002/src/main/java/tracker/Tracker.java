@@ -28,9 +28,7 @@ public class Tracker {
         boolean result = false;
         for (int i = 0; i != this.position; i++) {
             if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                this.items[i].setName(item.getName());
-                this.items[i].setDecs(item.getDecs());
-                this.items[i].setTime(item.getTime());
+                this.items[i] = item;
                 result = true;
                 break;
             }
@@ -64,7 +62,7 @@ public class Tracker {
                     pos++;
                 }
             }
-            return equalName;
+            return Arrays.copyOf(equalName, pos);
         }
 
     public Item findById(String id) {
