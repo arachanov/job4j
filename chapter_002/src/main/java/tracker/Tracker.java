@@ -14,10 +14,15 @@ public class Tracker {
      */
     private int position = 0;
 
+    public int getPosition() {
+        return position;
+    }
+
     /**
      * Метод реализаущий добавление заявки в хранилище
      * @param item новая заявка
      */
+
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
