@@ -73,13 +73,13 @@ public class StartUI {
     }
     public void editItem() {
         if (tracker.getPosition() > 0) {
-            String id = this.input.ask("Введите ID заявки для редактирования");
-            System.out.println("------------ Добавление новой языки --------------");
-            String name = this.input.ask("Введите имя заявки :");
-            String desc = this.input.ask("Введите описание заявки :");
+            String id = this.input.ask("Enter ID for change");
+            System.out.println("--------------------------");
+            String name = this.input.ask("Enter item name");
+            String desc = this.input.ask("Enter descritpion name");
             Item item = new Item(name, desc, 20190802);
             if (this.tracker.replace(id, item)) {
-                System.out.println("Редактирование выполнено");
+                System.out.println("Edit succes");
             }
         } else {
             System.out.println("Нет заявок");
@@ -120,23 +120,23 @@ public class StartUI {
      * Метод реализует добавленяи новый заявки в хранилище.
      */
     private void createItem() {
-        System.out.println("------------ Добавление новой языки --------------");
-        String name = this.input.ask("Введите имя заявки :");
-        String desc = this.input.ask("Введите описание заявки :");
+        System.out.println("------------New item--------------");
+        String name = this.input.ask("New item name");
+        String desc = this.input.ask("New desc");
         Item item = new Item(name, desc, 20190802);
        this.tracker.add(item);
-       System.out.println("------------ Новая заявка с getId : " + item.getId() + "-----------");
+       System.out.println("------------ Item with getId : " + item.getId() + "-----------");
     }
 
     private void showMenu() {
-        System.out.println("Меню.\n" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" +  "5. Find items by name\n" +  "6. Exit Program\n" +  "Select:");
+        System.out.println("Menu.\n" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" +  "5. Find items by name\n" +  "6. Exit Program\n" +  "Select:");
     }
 
     /**
      * Запускт программы.
      * @param args
      */
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
-    }
+    }*/
 }
