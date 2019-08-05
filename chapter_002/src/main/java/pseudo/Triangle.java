@@ -1,15 +1,18 @@
-package pseudo;
+package ru.job4j.pseudo;
 
 import ru.job4j.pseudo.Shape;
+
+import java.util.StringJoiner;
 
 public class Triangle implements Shape {
     @Override
     public String draw() {
-        StringBuilder pic = new StringBuilder();
-        pic.append("+");
-        pic.append("+ +");
-        pic.append("+  +");
-        pic.append("++++");
-        return pic.toString();
+       return new StringJoiner(
+                System.lineSeparator(), "",
+                System.lineSeparator())
+                .add("  ^  ")
+                .add(" ^ ^ ")
+                .add("^^^^^")
+                .toString();
     }
 }
