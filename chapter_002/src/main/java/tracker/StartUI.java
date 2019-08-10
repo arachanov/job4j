@@ -65,7 +65,7 @@ public class StartUI {
         if (tracker.getPosition() > 0) {
             Item[] items = this.tracker.findAll();
             for (int i = 0; i != items.length; i++) {
-                System.out.println(items[i].getName());
+                System.out.println(items[i]);
             }
         } else {
             System.out.println("Нет заявок");

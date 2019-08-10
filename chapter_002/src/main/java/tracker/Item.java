@@ -62,4 +62,16 @@ public class Item {
     public int hashCode() {
         return Objects.hash(id, name, decs, time);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Item{");
+        sb.append("id='").append(id).append('\'');
+        sb.append("name='").append(name).append('\'');
+        sb.append("decs='").append(decs).append('\'');
+        sb.append("time=").append(time);
+        sb.append('}');
+        return sb.toString();
+
+    }
 }
