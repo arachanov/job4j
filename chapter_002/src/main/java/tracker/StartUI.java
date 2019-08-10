@@ -41,7 +41,7 @@ public class StartUI {
     public void init() {
         boolean exit = false;
         while (!exit) {
-            this.showMenu();
+            //this.showMenu();
             String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
                 //добавление заявки вынесено в отдельный метод.
@@ -65,7 +65,7 @@ public class StartUI {
         if (tracker.getPosition() > 0) {
             Item[] items = this.tracker.findAll();
             for (int i = 0; i != items.length; i++) {
-                System.out.println(items[i]);
+                System.out.print(items[i]);
             }
         } else {
             System.out.println("Нет заявок");

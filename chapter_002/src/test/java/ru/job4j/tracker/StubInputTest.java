@@ -32,7 +32,7 @@ public class StubInputTest {
         StartUI startUI = new StartUI(input, tracker);
         startUI.init();
         //   создаём StartUI и вызываем метод init()
-        assertThat(baos.toString(), is(add.getId() + " " + add.getName())); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        assertThat(baos.toString(), is(add.toString())); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 /*
     @Test
