@@ -35,6 +35,26 @@ public class StubInputTest {
         //   создаём StartUI и вызываем метод init()
         assertThat(baos.toString(), is(MENU + add.toString() + MENU)); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
+    @Test
+    public void testFindByName() {
+        Tracker tracker = new Tracker();
+        Item add = tracker.add(new Item("test", "test", System.currentTimeMillis()));
+        Input input = new StubInput(new String[]{"5", add.getName(), "6"});   //создаём StubInput с последовательностью действий
+        StartUI startUI = new StartUI(input, tracker);
+        startUI.init();
+        //   создаём StartUI и вызываем метод init()
+        assertThat(baos.toString(), is(MENU + add.toString() + MENU)); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+    }
+    @Test
+    public void testFindId() {
+        Tracker tracker = new Tracker();
+        Item add = tracker.add(new Item("test", "test", System.currentTimeMillis()));
+        Input input = new StubInput(new String[]{"4", add.getId(), "6"});   //создаём StubInput с последовательностью действий
+        StartUI startUI = new StartUI(input, tracker);
+        startUI.init();
+        //   создаём StartUI и вызываем метод init()
+        assertThat(baos.toString(), is(MENU + add.toString() + MENU)); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+    }
 /*
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {

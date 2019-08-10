@@ -99,7 +99,7 @@ public class StartUI {
         if (tracker.getPosition() > 0) {
             String id = this.input.ask("Введите ID заявки для поиска");
             Item item = this.tracker.findById(id);
-                System.out.println(item.getName() + " найден");
+                System.out.print(item);
         } else {
             System.out.println("Нет заявок");
         }
@@ -109,7 +109,7 @@ public class StartUI {
             String name = this.input.ask("Введите имя заявки для поиска");
             Item[] item = this.tracker.findByName(name);
             for (int i = 0; i != item.length; i++) {
-                System.out.println("найдено совпадающее имя " + item[i].getName() + " ID " + item[i].getId());
+                System.out.print(item[i]);
             }
         } else {
             System.out.println("Нет заявок");
