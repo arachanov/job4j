@@ -41,7 +41,7 @@ public class StartUI {
     public void init() {
         boolean exit = false;
         while (!exit) {
-            //this.showMenu();
+            this.showMenu();
             String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
                 //добавление заявки вынесено в отдельный метод.
@@ -129,7 +129,7 @@ public class StartUI {
     }
 
     private void showMenu() {
-        System.out.println("Menu.\n" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" +  "5. Find items by name\n" +  "6. Exit Program\n" +  "Select:");
+        System.out.print("Menu.\n" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" +  "5. Find items by name\n" +  "6. Exit Program\n" +  "Select:");
     }
 
     /**

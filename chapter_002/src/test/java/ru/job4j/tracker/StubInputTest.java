@@ -13,6 +13,7 @@ import static org.junit.Assert.assertThat;
 public class StubInputTest {
     private ByteArrayOutputStream baos = new ByteArrayOutputStream();
     private PrintStream out = System.out;
+    private static final String MENU = "Menu.\n" + "0. Add new Item\n" + "1. Show all items\n" + "2. Edit item\n" + "3. Delete item\n" + "4. Find item by Id\n" +  "5. Find items by name\n" +  "6. Exit Program\n" +  "Select:";
 
     @Before
     public void beforeCheckList() {
@@ -32,7 +33,7 @@ public class StubInputTest {
         StartUI startUI = new StartUI(input, tracker);
         startUI.init();
         //   создаём StartUI и вызываем метод init()
-        assertThat(baos.toString(), is(add.toString())); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
+        assertThat(baos.toString(), is(MENU + add.toString() + MENU)); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 /*
     @Test
