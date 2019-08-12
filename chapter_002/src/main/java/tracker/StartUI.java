@@ -38,7 +38,7 @@ public class StartUI {
     /**
      * Основой цилк программы.
      */
-    public void init() {
+   /* public void init() {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
@@ -60,6 +60,14 @@ public class StartUI {
                 exit = true;
            }
         }
+    }*/
+    public void init() {
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        menu.fillActions();
+        do {
+            menu.show();
+            menu.select(Integer.valueOf(input.ask("select:")));
+        } while (!"y".equals(this.input.ask("Exit?(y): ")));
     }
     public void showItem() {
         if (tracker.getPosition() > 0) {
@@ -136,7 +144,7 @@ public class StartUI {
      * Запускт программы.
      * @param args
      */
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         new StartUI(new ConsoleInput(), new Tracker()).init();
-    }*/
+    }
 }
