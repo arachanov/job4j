@@ -196,8 +196,8 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             String id = input.ask("Please, provide ID item for search: ");
-            if (tracker.findById(id) != null) {
-                Item result = tracker.findById(id);
+            Item result = tracker.findById(id);
+            if (result != null) {
                 System.out.print(result);
             } else {
                 System.out.println("------------- Item didn't find ------------");
