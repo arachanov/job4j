@@ -15,7 +15,7 @@ public class MenuTracker {
     /**
      * @param keeps array type UserAction reference.
      */
-    private UserAction[] actions = new UserAction[7];
+    private List<UserAction> actions = new ArrayList<>();
 
     /**
      * Construction.
@@ -31,25 +31,25 @@ public class MenuTracker {
      * @return array length
      */
     public int getActionsLength() {
-        return this.actions.length;
+        return this.actions.size();
     }
     /**
      * Method fills array.
      */
     public void fillActions() {
-        this.actions[0] = new AddItem(0, "Add new Item");
-        this.actions[1] = new ShowItem(1, "Show all items");
-        this.actions[2] = new UpdateItem(2, "Edit item");
-        this.actions[3] = new DeleteItem(3, "Delete item");
-        this.actions[4] = new FindItemById(4, "Find item by Id");
-        this.actions[5] = new FindItemsByName(5, "Find items by name");
-        this.actions[6] = new ExitProgram(6, "Exit Program");
+        this.actions.add(new AddItem(0, "Add program"));
+        this.actions.add(new ShowItem(1, "Show all items"));
+        this.actions.add(new UpdateItem(2, "Edit item"));
+        this.actions.add(new DeleteItem(3, "Delete item"));
+        this.actions.add(new FindItemById(4, "Find item by Id"));
+        this.actions.add(new FindItemsByName(5, "Find items by name"));
+        this.actions.add(new ExitProgram(6, "Exit Program"));
     }
     /**
      *
      */
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
     }
 
     public void show() {

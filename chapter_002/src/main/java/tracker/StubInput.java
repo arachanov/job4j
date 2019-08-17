@@ -36,4 +36,8 @@ public class StubInput implements Input {
         //System.out.println(this.value[position]);
         return this.value[this.position++];
     }
+    public int ask(String question, int[] range) {
+        //throw new UnsupportedOperationException("Unsupported operation");
+        return -1;
+    }
 }
