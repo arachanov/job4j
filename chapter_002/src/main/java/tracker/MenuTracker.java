@@ -37,7 +37,7 @@ public class MenuTracker {
      * Method fills array.
      */
     public void fillActions() {
-        this.actions.add(new AddItem(0, "Add program"));
+        this.actions.add(new AddItem(0, "Add new Item"));
         this.actions.add(new ShowItem(1, "Show all items"));
         this.actions.add(new UpdateItem(2, "Edit item"));
         this.actions.add(new DeleteItem(3, "Delete item"));
@@ -54,7 +54,7 @@ public class MenuTracker {
 
     public void show() {
         for (UserAction action : this.actions) {
-            if (action != null) {
+           if (action != null) {
                 System.out.print(action.info());
             }
         }
@@ -111,7 +111,7 @@ public class MenuTracker {
         }
 
         @Override
-        public String info() {
+         public String info() {
             return String.format("%s. %s", num, str);
         }
     }

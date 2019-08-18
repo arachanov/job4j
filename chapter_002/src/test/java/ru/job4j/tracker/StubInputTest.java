@@ -35,6 +35,7 @@ public class StubInputTest {
         //   создаём StartUI и вызываем метод init()
         assertThat(baos.toString(), is(MENU + add.toString())); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
+    /*
     @Test
     public void testFindByName() {
         Tracker tracker = new Tracker();
@@ -54,7 +55,7 @@ public class StubInputTest {
         startUI.init();
         //   создаём StartUI и вызываем метод init()
         assertThat(baos.toString(), is(MENU + add.toString())); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
-    }
+    }*/
 /*
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
