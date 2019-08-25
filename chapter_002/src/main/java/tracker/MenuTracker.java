@@ -60,34 +60,17 @@ public class MenuTracker {
         }
     }
 
-    private class AddItem implements UserAction {
-        private int num;
-        private String str;
-        public AddItem(int num, String str) {
-            this.num = num;
-            this.str = str;
-        }
-        @Override
-        public int key() {
-            return num;
+    class AddItem extends BaseAction {
+
+        public AddItem(int key, String name) {
+            super(key, name);
         }
 
         @Override
         public void execute(Input input, Tracker tracker) {
-
-            System.out.println("------------ Adding new item --------------");
-            String name = input.ask("Please, provide item name: ");
-            String desc = input.ask("Please, provide item desc: ");
-            Item item = new Item(name, desc, 12082019);
-            tracker.add(item);
-            System.out.println("------------ New Item with Id: " + item.getId());
-            System.out.println("------------ New Item with Name: " + item.getName());
-            System.out.println("------------ New Item with Description: " + item.getDecs());
-        }
-
-        @Override
-        public String info() {
-            return String.format("%s. %s", num, str);
+            String name = input.ask("Enter name:");
+            String desc = input.ask("Enter description:");
+            tracker.add(new Item(name, desc, 25082019));
         }
     }
 
