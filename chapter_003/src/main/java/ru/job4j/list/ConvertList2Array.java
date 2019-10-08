@@ -20,10 +20,6 @@ public class ConvertList2Array {
               j++;
           }
         }
-        while (j != cells) {
-            array[i][j] = 0;
-            j++;
-        }
 
         return array;
     }
