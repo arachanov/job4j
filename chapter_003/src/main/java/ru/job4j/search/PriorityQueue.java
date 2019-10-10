@@ -14,12 +14,14 @@ public class PriorityQueue {
     public void put(Task task) {
         boolean addLisst = false;
         if (tasks.size() != 0) {
+            int index = 0;
             for (Task iTask : tasks) {
                 if (iTask.getPriority() > task.getPriority()) {
-                    tasks.add(tasks.indexOf(iTask), task);
+                    tasks.add(index, task);
                     addLisst = true;
                     break;
                 }
+                index++;
             }
             if (!addLisst) {
                 tasks.addLast(task);
