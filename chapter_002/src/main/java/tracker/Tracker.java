@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
-
 import java.util.*;
-
 public class Tracker {
     /**
      * Массив для хранение заявок.

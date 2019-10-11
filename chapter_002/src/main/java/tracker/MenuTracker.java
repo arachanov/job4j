@@ -1,10 +1,6 @@
 package ru.job4j.tracker;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 public class MenuTracker {
     /**
      * @param keeps object reference.
