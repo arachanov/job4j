@@ -6,7 +6,7 @@ public class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final Item[] items = new Item[100];
+    private final ArrayList<Item> items = new ArrayList<>();
     private static final Random RN = new Random();
 
     /**
@@ -25,15 +25,15 @@ public class Tracker {
 
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[this.position++] = item;
+        this.items.add(this.position++, item);
         return item;
     }
 
     public boolean replace(String id, Item item) {
         boolean result = false;
         for (int i = 0; i != this.position; i++) {
-            if (this.items[i] != null && this.items[i].getId().equals(id)) {
-                this.items[i] = item;
+            if (this.items.get(i) != null && this.items.get(i).getId().equals(id)) {
+                this.items.add(i, item);
                 result = true;
                 break;
             }
@@ -44,8 +44,9 @@ public class Tracker {
     public boolean delete(String id) {
         boolean result = false;
         for (int i = 0; i < this.position; i++) {
-            if (this.items[i].getId().equals(id)) {
-                System.arraycopy(this.items, i + 1, this.items, i, this.items.length - (i + 1));
+            if (this.items.get(i).getId().equals(id)) {
+                //System.arraycopy(this.items, i + 1, this.items, i, this.items.size() - (i + 1));
+                this.items.remove(i);
                 position--;
                 result = true;
                 break;
@@ -55,15 +56,16 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        return Arrays.copyOf(this.items, this.position);
+       // return Arrays.copyOf(this.items, this.position);
+        return items.toArray(new Item[items.size()]);
     }
 
     public Item[] findByName(String key) {
         Item[] equalName = new Item[position];
         int pos = 0;
             for (int i = 0; i < this.position; i++) {
-                if (this.items[i].getName().equals(key)) {
-                    equalName[pos] = this.items[i];
+                if (this.items.get(i).getName().equals(key)) {
+                    equalName[pos] = this.items.get(i);
                     pos++;
                 }
             }
@@ -73,8 +75,8 @@ public class Tracker {
     public Item findById(String id) {
         Item result = null;
         for (int i = 0; i != position; i++) {
-            if (items[i] != null && items[i].getId().equals(id)) {
-                result = items[i];
+            if (items.get(i) != null && items.get(i).getId().equals(id)) {
+                result = items.get(i);
                 break;
             }
         }
