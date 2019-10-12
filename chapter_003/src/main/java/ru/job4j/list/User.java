@@ -1,22 +1,24 @@
 package ru.job4j.list;
 
 public class User {
-    private int id;
+    //private int id;
     private String name;
-    private String city;
+   // private String city;
+    private int age;
 
-    public User(int id, String name, String city) {
-        this.id = id;
+    public User(String name, int age) {
+        //this.id = id;
         this.name = name;
-        this.city = city;
+        //this.city = city;
+        this.age = age;
     }
 
-    public int getId() {
-        return id;
+    public int getAge() {
+        return age;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -27,11 +29,4 @@ public class User {
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 }
