@@ -4,7 +4,7 @@ public class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final ArrayList<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private static final Random RN = new Random();
 
     /**
@@ -31,7 +31,7 @@ public class Tracker {
         boolean result = false;
         for (int i = 0; i != this.position; i++) {
             if (this.items.get(i) != null && this.items.get(i).getId().equals(id)) {
-                this.items.add(i, item);
+                this.items.set(i, item);
                 result = true;
                 break;
             }
@@ -53,21 +53,21 @@ public class Tracker {
         return result;
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
        // return Arrays.copyOf(this.items, this.position);
-        return items.toArray(new Item[items.size()]);
+        return items;
     }
 
-    public Item[] findByName(String key) {
-        Item[] equalName = new Item[position];
+    public List<Item> findByName(String key) {
+        List<Item> equalName = new ArrayList<>();
         int pos = 0;
             for (int i = 0; i < this.position; i++) {
                 if (this.items.get(i).getName().equals(key)) {
-                    equalName[pos] = this.items.get(i);
+                    equalName.add(pos, this.items.get(i));
                     pos++;
                 }
             }
-            return Arrays.copyOf(equalName, pos);
+            return equalName;
         }
 
     public Item findById(String id) {

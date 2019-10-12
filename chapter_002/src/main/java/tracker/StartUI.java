@@ -79,9 +79,9 @@ public class StartUI {
     }
     public void showItem() {
         if (tracker.getPosition() > 0) {
-            Item[] items = this.tracker.findAll();
-            for (int i = 0; i != items.length; i++) {
-                System.out.print(items[i]);
+            List<Item> items = this.tracker.findAll();
+            for (int i = 0; i != items.size(); i++) {
+                System.out.print(items.get(i));
             }
         } else {
             System.out.println("Нет заявок");
@@ -123,9 +123,9 @@ public class StartUI {
     public void findByName() {
         if (tracker.getPosition() > 0) {
             String name = this.input.ask("Введите имя заявки для поиска");
-            Item[] item = this.tracker.findByName(name);
-            for (int i = 0; i != item.length; i++) {
-                System.out.print(item[i]);
+            List<Item> item = this.tracker.findByName(name);
+            for (int i = 0; i != item.size(); i++) {
+                System.out.print(item.get(i));
             }
         } else {
             System.out.println("Нет заявок");
