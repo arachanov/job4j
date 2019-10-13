@@ -19,6 +19,7 @@ public class SortUserTest {
         list.add(new User("Egor", 19));
         list.add(new User("Raul", 37));
         SortUser sortUser = new SortUser();
-        assertThat(sortUser.sort(list), is(list.get(2)));
+        Set<User> result = sortUser.sort(list);
+        assertThat(result.iterator().next().getAge(), is(list.get(2).getAge()));
     }
 }
