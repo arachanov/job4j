@@ -15,11 +15,11 @@ public class SortUserTest {
     public void sortUserTestMethod() {
         List<User> list = new ArrayList();
         list.add(new User("Andy", 27));
-        list.add(new User("Pier", 28));
-        list.add(new User("Egor", 19));
-        list.add(new User("Raul", 37));
+        list.add(new User("Pierо", 28));
+        list.add(new User("Egorka", 19));
+        list.add(new User("RaulGonzalez", 37));
         SortUser sortUser = new SortUser();
-        Set<User> result = sortUser.sort(list);
-        assertThat(result.iterator().next().getAge(), is(list.get(2).getAge()));
+        List<User> result = sortUser.sortNameLength(list);
+        assertThat(result.get(result.size() - 1).getName().length(), is(list.get(3).getName().length()));
     }
 }
