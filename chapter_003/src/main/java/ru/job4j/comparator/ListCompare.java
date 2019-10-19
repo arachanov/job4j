@@ -9,7 +9,13 @@ public class ListCompare implements Comparator<String> {
         int result = left.length() - right.length();
         int steps = result > 0 ? right.length() : left.length();
         for (int i = 0; i < steps; i++) {
-            result = result + (Character.compare(left.charAt(i), right.charAt(i)));
+        result = Character.compare(left.charAt(i), right.charAt(i));
+            if (result != 0) {
+                break;
+            }
+            if (i == steps - 1) {
+                result = left.length() - right.length();
+            }
         }
         return result;
     }
