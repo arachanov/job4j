@@ -1,6 +1,3 @@
 # job4
-1. Внести измененRя в файл README.md. Открыть файл в блокноте Nodepad++.
-2. Добавить в него ссылку на проект 
-3. Объединение нескольких коммитов.[#152014]
-4. попытка №2, повтор
-task 124179 
+[![Build Status](https://travis-ci.org/arachanov/job4j.svg?branch=master)](https://travis-ci.org/arachanov/job4j)
+[![codecov](https://codecov.io/gh/arachanov/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/arachanov/job4j)
