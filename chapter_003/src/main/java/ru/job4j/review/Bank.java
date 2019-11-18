@@ -44,21 +44,27 @@ public class Bank {
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                   String destPassport, String dstRequisite, double amount) {
+        boolean result = false;
         Set<User> users = this.treemap.keySet();
-        for(User user :users) {
-            if (srcPassport == user.getPassport()) {
-                this.treemap.values()
+        for (User user : users) {
+            if (user.getPassport() == srcPassport) {
+                for (int i = 0; i != this.treemap.get(user).size(); i++) {
+                   if ((this.treemap.get(user).get(i).reqs == srcRequisite) & this.treemap.get(user).get(i).values >= amount) {
+                       for (User user1 : users) {
+                           if (user1.getPassport() == destPassport) {
+                               for (int j = 0; j < this.treemap.get(user1).size(); j++) {
+                                   if (this.treemap.get(user1).get(j).reqs == dstRequisite) {
+                                       result = this.treemap.get(user).get(i).transfer(this.treemap.get(user1).get(j), amount);
+                                       break;
+                                   }
+                               }
+                           }
+                       }
+                   }
+                }
             }
         }
-        /*if (this.treemap.get(srcPassport) == srcRequisite & this.treemap.get(srcPassport) > amount {
-            this.treemap.get(srcPassport).listIterator().next().values -= amount;
-            this.treemap.get(destPassport).listIterator().next().values += amount;
-            return true;
-        } else {
-            return false;
-        }*/
-        System.out.println(this.treemap.get(srcPassport));
-        return true;
+        return result;
     }
 
     public void deleteAccount(User user, Account account) {
