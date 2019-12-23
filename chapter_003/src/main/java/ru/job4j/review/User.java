@@ -45,6 +45,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(passport);
+        return Integer.parseInt(passport);
     }
 }
