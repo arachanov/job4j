@@ -8,7 +8,6 @@ import java.util.*;
 
 public class Bank {
     private Map<User, ArrayList<Account>> treemap = new HashMap<>();
-    private User usert;
 
     public void addUser(User user) {
         this.treemap.putIfAbsent(user, new ArrayList<Account>());
@@ -38,24 +37,23 @@ public class Bank {
         return this.treemap.get(passport);
     }
 
-    private int getActualAccount(User user, String requisite) {
+    private Account getActualAccount(User user, String requisite) {
         ArrayList<Account> list = this.treemap.get(user);
-        int result = 0;
+        Account result = null;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).reqs.equals(requisite)) {
-                result = i;
+                result = list.get(i);
                 break;
             }
         }
         return result;
     }
 
-    private boolean findFromPassport(String passport) {
-        boolean result = false;
+    private User findFromPassport(String passport) {
+        User result = null;
         for (User us : this.treemap.keySet()) {
-            if (Integer.parseInt(passport) == us.hashCode()) {
-                usert = us;
-                result = true;
+            if (us.getPassport().equals(passport)) {
+                result = us;
                 break;
             }
         }
@@ -64,11 +62,10 @@ public class Bank {
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                   String destPassport, String dstRequisite, double amount) {
-        if (findFromPassport(srcPassport)) {
-            User src = usert;
-            findFromPassport(destPassport);
-            User dest = usert;
-           return this.treemap.get(src).get(getActualAccount(src, srcRequisite)).transfer(this.treemap.get(dest).get(getActualAccount(dest, dstRequisite)), amount);
+        Account source = getActualAccount(findFromPassport(srcPassport), srcRequisite);
+        Account destination = getActualAccount(findFromPassport(destPassport), dstRequisite);
+        if (source != null && destination != null) {
+           return source.transfer(destination, amount);
        } else {
             System.out.println("Перевод не выполнен! Такого пользователя не существует");
             return false;
