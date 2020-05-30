@@ -24,16 +24,16 @@ public class SchoolTest {
         students.add(new Student(100, "Иванов"));
         students.add(new Student(60, "Петров"));
         students.add(new Student(30, "Сидоров"));
-        List<Student> result = School.collect(students, student -> student.getScore() < 70 & student.getScore() > 30);
+        List<Student> result = School.collect(students, student -> student.getScore() < 70 & student.getScore() > 50);
         assertThat(result.get(0).getSurname(), is("Петров"));
-
-    }@Test
+    }
+    @Test
     public void whenDiaposonC() {
         ArrayList<Student> students = new ArrayList<>();
         students.add(new Student(100, "Иванов"));
         students.add(new Student(60, "Петров"));
         students.add(new Student(30, "Сидоров"));
-        List<Student> result = School.collect(students, student -> student.getScore() <= 30);
+        List<Student> result = School.collect(students, student -> student.getScore() <= 50);
         assertThat(result.get(0).getSurname(), is("Сидоров"));
 
     }
