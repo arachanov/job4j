@@ -19,7 +19,7 @@ public class ProfileTest {
         chechList.add(new Address("Moscow", "Arbat", 99, 100));
         chechList.add(new Address("Krasnodar", "Red", 78, 56));
         chechList.add(new Address("Kazan", "Gagarin", 55, 61));
-        List<Address> result = Profile.collect(profile);
+        List<Address> result = Profiles.collect(profile);
         assertThat(chechList.equals(result), is(true));
     }
     @Test
@@ -32,7 +32,7 @@ public class ProfileTest {
         chechList.add(new Address("Moscow", "Arbat", 99, 1));
         chechList.add(new Address("Krasnodar", "Red", 8, 56));
         chechList.add(new Address("Kazan", "Garin", 55, 61));
-        List<Address> result = Profile.collect(profile);
-        assertThat(chechList.equals(result), is(false));
+        List<Address> result = Profiles.collect(profile);
+        assertThat(chechList.equals(result), is(false   ));
     }
 }
