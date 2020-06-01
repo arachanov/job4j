@@ -33,7 +33,7 @@ public class Address {
 
     @Override
     public int hashCode() {
-        return this.getStreet().length() + this.getCity().length() + this.getHome() + this.getApartment();
+        return this.city.hashCode();
     }
 
     @Override
