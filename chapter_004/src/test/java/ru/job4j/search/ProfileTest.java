@@ -18,11 +18,10 @@ public class ProfileTest {
         profile.add(new Profile(new Address("Krasnodar", "Red", 178, 156)));
         profile.add(new Profile(new Address("Kazan", "Gagarin", 55, 61)));
         profile.add(new Profile(new Address("Kazan", "Gagarin", 155, 161)));
-        List<Address> chechList = new ArrayList<>();
-        chechList.add(new Address("Kazan", "Gagarin", 55, 61));
-        chechList.add(new Address("Krasnodar", "Red", 78, 56));
-        chechList.add(new Address("Moscow", "Arbat", 99, 100));
+        List<Address> except = List.of(new Address("Kazan", "Gagarin", 55, 61),
+        new Address("Krasnodar", "Red", 78, 56),
+        new Address("Moscow", "Arbat", 99, 100));
         List<Address> result = Profiles.sortAddress(profile);
-        assertThat(chechList.equals(result), is(true));
+        assertThat(except.equals(result), is(true));
     }
 }
