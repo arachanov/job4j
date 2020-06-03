@@ -15,7 +15,7 @@ public class PriorityQueue {
         boolean addLisst = false;
         if (tasks.size() != 0) {
             int index = 0;
-            for (Task iTask : tasks) {
+            for (var iTask : tasks) {
                 if (iTask.getPriority() > task.getPriority()) {
                     tasks.add(index, task);
                     addLisst = true;
@@ -33,7 +33,7 @@ public class PriorityQueue {
     }
 
     public Task take() {
-        Task res = this.tasks.poll();
+        var res = this.tasks.poll();
         return res;
     }
 
