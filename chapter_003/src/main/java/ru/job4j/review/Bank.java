@@ -38,26 +38,27 @@ public class Bank {
     }
 
     private Account getActualAccount(User user, String requisite) {
-        ArrayList<Account> list = this.treemap.get(user);
+        /*ArrayList<Account> list = this.treemap.get(user);
         Account result = null;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).reqs.equals(requisite)) {
                 result = list.get(i);
                 break;
             }
-        }
-        return result;
+        }*/
+        return this.treemap.get(user).stream().filter(x -> x.reqs.equals(requisite)).findAny().get();
     }
 
     private User findFromPassport(String passport) {
-        User result = null;
+        /*User result = null;
         for (User us : this.treemap.keySet()) {
             if (us.getPassport().equals(passport)) {
                 result = us;
                 break;
             }
         }
-        return result;
+        return result;*/
+       return this.treemap.keySet().stream().filter(x -> x.getPassport().equals(passport)).findAny().get();
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
